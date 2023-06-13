@@ -1,6 +1,6 @@
 # Requirements
 * pandas
-* BeautifulSoup
+* bs4
 * matplotlib
 * selenium
-* 
+* requests
