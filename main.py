@@ -17,6 +17,7 @@ i_n_results = 250  # Results to fetch
 i_s_year = 2003  # Starting year of results
 i_e_year = datetime.datetime.now().year  # Ending year of results
 MAX_CSV_FNAME = 255
+highlighted_ref = 3
 
 # Don't touch
 # i_csv_path = './' + "CSVs/"
@@ -251,8 +252,8 @@ for i_keyword in i_keyword_list:
     rank = data_ranked.index.values.tolist()
     citations = data_ranked["Citations"].values.tolist()
     if plot_results:
-        plt.plot(rank[0:3],citations[0:3],'*', c='r')
-        plt.plot(rank[3:],citations[3:],'*', c='b')
+        plt.plot(rank[0:highlighted_ref], citations[0:highlighted_ref], '*', c='r')
+        plt.plot(rank[highlighted_ref:], citations[highlighted_ref:], '*', c='b')
         plt.ylabel('Number of Citations')
         plt.xlabel('Rank of the keyword on Google Scholar')
         plt.title('Keyword: '+keyword)
